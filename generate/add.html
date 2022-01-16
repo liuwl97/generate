@@ -1,0 +1,124 @@
+{extend name="base" /}
+{block name="body"} 
+<!-- Main content -->
+<section class="content">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+        <div class="info_box">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">栏目自动生成</h3>
+                    </div>
+                    
+                    <form id="form1" method="post" action="">
+                        
+                        <div class="panel mt20">
+                               
+                                  <!--基本设置-->
+                                <div class="tab-pane active" id="tab_info">  
+                                    <table class="table table-bordered">
+
+                                        <tr>
+                                           
+                                            <td id="box">表名</td>
+                                            <td >
+                                                <input type="text" name="table" value="" required  lay-verify="required" placeholder="表名" class="form-control">
+                                            </td>
+                                            <td id="box">中文名称</td>
+                                            <td >
+                                                <input type="text" name="name" value="" required  lay-verify="required" placeholder="中文名称" class="form-control">
+                                            </td>
+                                            
+                                                <td id="box">模块名称后缀</td>
+                                                <td >
+                                                    <input type="text" name="ext" value="管理" required  lay-verify="required" placeholder="模块名称后缀" class="form-control">
+                                                </td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td id="box">菜单</td>
+                                            <td>
+                                            <select name="parent_id" class='form-control valid'>
+                                                <option value="0" data-orgid="0">顶级栏目</option>
+                                                
+                                            </select>
+                                            </td>
+
+                                            <td id="box">菜单选择</td>
+                                            <td colspan="4">
+
+                                            <select name="action_menu" placeholder='可模糊搜索' class='form-control valid w255'
+                                                xm-select="select7_1"  xm-select-search="">
+                                                
+                                                <option value="1" selected>列表</option>
+                                                <option value="2" selected>添加</option>
+                                                <option value="3" selected>修改</option>
+                                                <option value="4" selected>删除</option>
+                                                <option value="5" selected>排序</option>
+
+                                            </select>
+                                            </td>
+
+                                        </tr>
+                                        
+                                            
+                                        <tr>
+                                            <td>选择图标</td>
+                                            <td>
+                                                <div class="input-group iconpicker-container">
+                                                    <input maxlength="50" id="module_icon" name="module_icon"
+                                                        value="fa-list" class="form-control "
+                                                        placeholder="请输入图标class"
+                                                        title="模块图标，比如用户模块，可以选择[fa-user]作为图标，默认为[fa-list]"
+                                                        data-toggle="tooltip">
+                                                </div>
+                                            </td>
+                                            <script>
+                                                $('#module_icon').iconpicker({placement: 'bottomLeft'});
+                                            </script>
+                                        </tr>
+                                        
+
+
+                                        <tr>
+                                            
+                                            <td colspan="12" class="text-right col-sm-12">
+                                                <input class="btn btn-primary" type="submit" lay-submit lay-filter="*" value="保存">
+                                                <a href="javascript:history.go(-1)" class="btn btn-default">返回</a>
+                                            </td>
+                                        </tr>
+                                            
+                                    </table>
+                                </div>
+
+                               
+
+                                
+                                
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</section>
+
+<link rel="stylesheet" href="{$cdomain}__PTSTA__/dist/css/formSelects-v4.css" />
+<script src="{$cdomain}__PTSTA__/dist/js/formSelects-v4.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    // var formSelects = layui.formSelects;
+</script>
+
+<script>
+  //执行一个laydate实例
+laydate.render({
+  elem: '#test1' //指定元素
+});
+</script>
+{/block} 
+
